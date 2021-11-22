@@ -1,0 +1,16 @@
+body {
+  background-color: white;
+  color: black;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+/* .bg-dark{
+    background-color: black !important;
+}
+
+.border-dark {
+    border-color: black !important;
+} */

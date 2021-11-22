@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta Name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
+  <script src="vue.js"></script>
+  <link rel="stylesheet" href="script/additional.css" />
+  <link rel="stylesheet" href="script/darkmode.css" />
+
+  <title>Hello, world!</title>
+</head>
+
+<body class="container-fluid" style="max-width: 950px">
+  <nav id="nav" class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Navbar</a>
+      <button onclick="darkMode()" class="btn">
+        <i class="fas fa-adjust"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div id="vue">
+    <div v-for="(Restaurant, id) in Restaurant" :key="id">
+      <div id="card" class="card my-3 border-dark" style="max-width: 100%">
+        <div class="card-header">
+          <h1> {{Restaurant.Name}} </h1>
+          <p class="card-text">7 am - 9pm, Mon-Sat</p>
+        </div>
+        <div class="card-body">
+          <img src="media/Restaurant1.webp" class="card-img mb-2" alt="..." />
+          <h5 class="card-title">Card title</h5>
+          <p id="app" class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="/Restaurant1.html" class="btn btn-primary" style="width: 100%">Restaurant Detail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var vue = new Vue({
+      el: '#vue',
+      data: {
+        Restaurant: [
+          { id: 1, 
+            Name: 'Kediri Cafe',
+            Jam: '', 
+            Loc: '',
+            Desc: ''
+          },
+          { id: 2, 
+            Name: 'Warung Tegal',
+            Jam: '', 
+            Loc: '',
+            Desc: ''
+          },
+          { id: 3, 
+            Name: 'Warkop Pak Pri',
+            Jam: '', 
+            Loc: '',
+            Desc: ''
+          }
+        ]
+      }
+    })
+  </script>
+
+  <script src="bootstrap\js\bootstrap.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="script/darkmode.js"></script>
+</body>
+
+</html>
