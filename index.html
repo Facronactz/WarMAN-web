@@ -148,6 +148,31 @@
     })
   </script>
 
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDMgCNjuKv087Cxv7AfJExWiAvhgHeHtdg",
+      authDomain: "warman-f2321.firebaseapp.com",
+      databaseURL: "https://warman-f2321-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "warman-f2321",
+      storageBucket: "warman-f2321.appspot.com",
+      messagingSenderId: "236549924414",
+      appId: "1:236549924414:web:6a90959b2c1dabf66b936f",
+      measurementId: "G-83W5C2DH7C"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
   <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
   <script src="script/darkmode.js"></script>
 </body>
