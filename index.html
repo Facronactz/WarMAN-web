@@ -38,7 +38,7 @@
   </nav>
 
   <div id="vue">
-    <div v-for="(Restaurant, id) in Restaurant" :key="id">
+    <div v-for="Restaurant in Restaurant">
       <div id="card" class="card my-3 border-dark" style="max-width: 100%">
         <div class="card-header">
           <h1> {{Restaurant.Name}} </h1>
@@ -52,7 +52,7 @@
           </p>
         </div>
         <div class="card-footer">
-          <a href="/restaurant1.html" class="btn btn-primary" style="width: 100%">Restaurant Detail</a>
+          <a @click="persist(Restaurant)" href="/restaurant.html" class="btn btn-primary" style="width: 100%">Restaurant Detail</a>
         </div>
       </div>
     </div>
@@ -85,7 +85,17 @@
             img: 'media/restaurant1.webp'
           }
         ]
-      }
+      },
+      methods: {
+        persist(index){
+          localStorage.id = index.id
+          localStorage.Name = index.Name
+          localStorage.Jam = index.Jam
+          localStorage.Loc = index.Loc
+          localStorage.Desc = index.Desc
+          localStorage.Img = index.img
+        }
+      },
     })
   </script>
 

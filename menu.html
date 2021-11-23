@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta Name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
+  <script src="vue.js"></script>
+  <link rel="stylesheet" href="script/additional.css" />
+  <link rel="stylesheet" href="script/darkmode.css" />
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d55b5b">
+  <meta name="apple-mobile-web-app-title" content="WarMAN">
+  <meta name="application-name" content="WarMAN">
+  <meta name="msapplication-TileColor" content="#ff6767">
+  <meta name="theme-color" content="#ff2a2a">
+
+  <style>
+    .img-relative {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+  <title>WarMAN</title>
+</head>
+
+<body class="container-fluid" style="max-width: 950px">
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Navbar</a>
+      <button onclick="darkMode()" class="btn">
+        <i class="fas fa-adjust"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div id="vue">
+    <div v-for="Menu in Menus">
+      <a @click="persist(Menu)" href="/detailMenu.html" id="card" class="card my-1 border-dark">
+        <div class="card-body img-relative ">
+          <img class="card-img" src="media/restaurant1.webp" alt="" style="height: 10rem; object-fit: cover; filter:brightness(50%)">
+          <div class="center">
+            <h4>{{Menu.Name}}</h4>
+            <h5>{{Menu.Price}}</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+    <script>
+      var vue = new Vue({
+        el: '#vue',
+        data: {
+          Restaurant: {
+            id: localStorage.id,
+          },
+          Menus: [
+            {
+              id: '1',
+              Name: 'Rujak',
+              Price: '8.000',
+              Desc: 'Some sort of descriptionof the product'
+            },
+            { 
+              id: '2',
+              Name: 'Pecel',
+              Price: '10.000',
+              Desc: 'Some sort of descriptionof the product'
+            },
+            { 
+              id: '3',
+              Name: 'Tumpang',
+              Price: '10.000',
+              Desc: 'Some sort of descriptionof the product'
+            },
+            { 
+              id: '4',
+              Name: 'Mie Goreng',
+              Price: '5.000',
+              Desc: 'Some sort of descriptionof the product'
+            },
+            { 
+              id: '5',
+              Name: 'Mie Rebus',
+              Price: '5.000',
+              Desc: 'Some sort of descriptionof the product'
+            },
+            { 
+              id: '6',
+              Name: 'Telur Penyet',
+              Price: '12.500',
+              Desc: 'Some sort of descriptionof the product'
+            },
+            { 
+              id: '7',
+              Name: 'Tempe Penyet',
+              Price: '11.500',
+              Desc: 'Some sort of descriptionof the product'
+            },
+          ]
+        },
+        methods: {
+          persist(index){
+          localStorage.Menu_id = index.id
+          localStorage.Menu_Name = index.Name
+          localStorage.Menu_Price = index.Price
+          localStorage.Menu_Desc = index.Desc
+          localStorage.Menu.Img = index.img
+          }
+        },
+      })
+    </script>
+
+    <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="script/darkmode.js"></script>
+</body>
+
+</html>
