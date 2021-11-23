@@ -54,15 +54,17 @@
 
   <div id="vue">
     <div v-for="Menu in Menus">
-      <a @click="persist(Menu)" href="/detailMenu.html" id="card" class="card my-1 border-dark">
-        <div class="card-body img-relative ">
-          <img class="card-img" src="media/restaurant1.webp" alt="" style="height: 10rem; object-fit: cover; filter:brightness(50%)">
-          <div class="center">
-            <h4>{{Menu.Name}}</h4>
-            <h5>{{Menu.Price}}</h5>
+      <div v-if="Menu.Restaurant === Restaurant.id">
+        <a @click="persist(Menu)" href="/detailMenu.html" id="card" class="card my-1 border-dark">
+          <div class="card-body img-relative ">
+            <img class="card-img" src="media/restaurant1.webp" alt="" style="height: 10rem; object-fit: cover; filter:brightness(50%)">
+            <div class="center">
+              <h4>{{Menu.Name}}</h4>
+              <h5>{{Menu.Price}}</h5>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -78,43 +80,50 @@
               id: '1',
               Name: 'Rujak',
               Price: '8.000',
-              Desc: 'Some sort of descriptionof the product'
+              Desc: 'Some sort of descriptionof the product',
+              Restaurant: '1'
             },
             { 
               id: '2',
               Name: 'Pecel',
               Price: '10.000',
-              Desc: 'Some sort of descriptionof the product'
+              Desc: 'Some sort of descriptionof the product',
+              Restaurant: '1'
             },
             { 
               id: '3',
               Name: 'Tumpang',
               Price: '10.000',
-              Desc: 'Some sort of descriptionof the product'
+              Desc: 'Some sort of descriptionof the product',
+              Restaurant: '1'
             },
             { 
               id: '4',
               Name: 'Mie Goreng',
               Price: '5.000',
-              Desc: 'Some sort of descriptionof the product'
+              Desc: 'Some sort of descriptionof the product',
+              Restaurant: '2'
             },
             { 
               id: '5',
               Name: 'Mie Rebus',
               Price: '5.000',
-              Desc: 'Some sort of descriptionof the product'
+              Desc: 'Some sort of descriptionof the product',
+              Restaurant: '2'
             },
             { 
               id: '6',
               Name: 'Telur Penyet',
               Price: '12.500',
-              Desc: 'Some sort of descriptionof the product'
+              Desc: 'Some sort of descriptionof the product',
+              Restaurant: '2'
             },
             { 
               id: '7',
               Name: 'Tempe Penyet',
               Price: '11.500',
-              Desc: 'Some sort of descriptionof the product'
+              Desc: 'Some sort of descriptionof the product',
+              Restaurant: '3'
             },
           ]
         },
