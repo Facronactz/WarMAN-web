@@ -56,7 +56,7 @@
     <div v-for="Menu in Menus">
       <div v-if="Menu.Restaurant === Restaurant.id">
         <a @click="persist(Menu)" href="/detailMenu.html" id="card" class="card my-1 border-dark">
-          <div class="card-body img-relative ">
+          <div class="card-body img-relative">
             <img class="card-img" src="media/restaurant1.webp" alt="" style="height: 10rem; object-fit: cover; filter:brightness(50%)">
             <div class="center">
               <h4>{{Menu.Name}}</h4>
