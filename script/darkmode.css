@@ -6,6 +6,9 @@ body {
   background-color: black;
   color: white;
 }
+.i-black{
+  color: white;
+}
 
 /* .bg-dark{
     background-color: black !important;
