@@ -1,10 +1,10 @@
 function darkMode() {
 
   if (localStorage.dark) {
-    localStorage.dark = 0;
+    localStorage.removeItem('dark');
   }
-  else if (!localStorage.dark){
-    localStorage.dark = 1;
+  else{
+    localStorage.setItem('dark', true);
   }
 
   var element = document.body;
