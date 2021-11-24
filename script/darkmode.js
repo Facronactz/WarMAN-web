@@ -1,6 +1,15 @@
 function darkMode() {
+
+  if (localStorage.dark) {
+    localStorage.dark = 0;
+  }
+  else if (!localStorage.dark){
+    localStorage.dark = 1;
+  }
+
   var element = document.body;
   var c = document.getElementsByClassName("card")
+
   for (let index = 0; index < c.length; index++) {
     ["bg-dark", "text-white", "border-light", "border-dark"].map((v) => c[index].classList.toggle(v));
   }
