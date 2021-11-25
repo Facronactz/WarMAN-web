@@ -42,7 +42,7 @@ var vue = new Vue({
                         }
                         crot.Cart = str;
                         break;
-                    } else if (parseInt.length === index + 1) {
+                    } else if (parseCrot.length === index + 1) {
                         crot.Cart += "," + menu + "_" + 1;
                     }
                 }
