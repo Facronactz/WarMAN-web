@@ -47,36 +47,37 @@
     <meta name="application-name" content="WarMAN" />
     <meta name="msapplication-TileColor" content="#ff6767" />
     <meta name="theme-color" content="#ff2a2a" />
+    <script src="script/db.js"></script>
 
     <title>WarMAN</title>
   </head>
   <body class="container-fluid" style="max-width: 950px">
-    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="menu.html"
-          ><i class="fa fa-chevron-left" aria-hidden="true"> Back</i></a
-        >
-        <button onclick="darkMode()" class="btn">
-          <i id="i" class="fas fa-adjust"></i>
-        </button>
-      </div>
-    </nav>
-
     <div id="vue">
       <h1>{{Menu.Name}}</h1>
       <img :src="Menu.Img" alt="" style="width: 100%; object-fit: cover" />
       <h6 class="mt-1">{{Menu.Desc}}</h6>
       <h6>Rp.{{Menu.Price}}</h6>
-      <a @click="addCart(Menu.id)" class="btn btn-primary" style="width: 100%"
-        >Add to Cart</a
-      >
+      <a href="" class="btn btn-primary" style="width: 100%">Add to Cart</a>
+      <button-counter
+        class="btn btn-primary"
+        style="width: 100%"
+      ></button-counter>
     </div>
 
     <script>
-      
+      var vue = new Vue({
+        el: "#vue",
+        data: {
+          Menu: {
+            id: localStorage.Menu_id,
+            Name: localStorage.Menu_Name,
+            Price: localStorage.Menu_Price,
+            Img: localStorage.Menu_Img,
+            Desc: localStorage.Menu_Desc,
+          },
+        },
+      });
     </script>
-
-    <script src="script/func.js"></script>
 
     <script
       src="bootstrap\js\bootstrap.min.js"
