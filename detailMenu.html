@@ -1,90 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
-    <link
-      href="bootstrap\css\bootstrap.min.css"
-      rel="stylesheet"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://kit.fontawesome.com/194b575a78.js"
-      crossorigin="anonymous"
-    ></script>
+    <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
     <script src="vue.js"></script>
     <link rel="stylesheet" href="script/additional.css" />
     <link rel="stylesheet" href="script/darkmode.css" />
 
     <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="favicon/favicon-16x16.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
     <link rel="manifest" href="favicon/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="favicon/safari-pinned-tab.svg"
-      color="#d55b5b"
-    />
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d55b5b" />
     <meta name="apple-mobile-web-app-title" content="WarMAN" />
     <meta name="application-name" content="WarMAN" />
     <meta name="msapplication-TileColor" content="#ff6767" />
     <meta name="theme-color" content="#ff2a2a" />
 
     <title>WarMAN</title>
-  </head>
-  <body class="container-fluid" style="max-width: 950px">
+</head>
+
+<body class="container-fluid" style="max-width: 950px">
     <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="menu.html"
-          ><i class="fa fa-chevron-left" aria-hidden="true"> Back</i></a
-        >
-        <button onclick="darkMode()" class="btn">
-          <i id="i" class="fas fa-adjust"></i>
-        </button>
-      </div>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="menu.html"><i class="fa fa-chevron-left" aria-hidden="true"> Back</i></a>
+            <button onclick="darkMode()" class="btn">
+                <i id="i" class="fas fa-adjust"></i>
+            </button>
+        </div>
     </nav>
 
     <div id="vue">
-      <h1>{{Menu.Name}}</h1>
-      <img :src="Menu.Img" alt="" style="width: 100%; object-fit: cover" />
-      <h6 class="mt-1">{{Menu.Desc}}</h6>
-      <h6>Rp.{{Menu.Price}}</h6>
-      <a @click="addCart(Menu.id)" class="btn btn-primary" style="width: 100%"
-        >Add to Cart</a
-      >
+        <h1>{{Menu.Name}}</h1>
+        <img :src="Menu.Img" alt="" style="width: 100%; object-fit: cover" />
+        <h6 class="mt-1">{{Menu.Desc}}</h6>
+        <h6>Rp.{{Menu.Price}}</h6>
+        <a @click="addCart(Menu.id)" class="btn btn-primary" style="width: 100%">Add to Cart</a>
     </div>
 
     <script>
-      
+
     </script>
 
     <script src="script/func.js"></script>
 
-    <script
-      src="bootstrap\js\bootstrap.min.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/darkmode.js"></script>
-    <script>
-      isdarkMode();
-    </script>
-  </body>
+    <script> isdarkMode(); </script>
+</body>
+
 </html>

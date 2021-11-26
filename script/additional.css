@@ -1,0 +1,35 @@
+.img-relative {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.btm-left {
+    position: absolute;
+    bottom: calc(0% + 0px);
+    left: calc(0% + 14px);
+    font-size: calc(80% + 2vw);
+}
+
+.h6 {
+    font-size: calc(80% + .5vw);
+    margin-top: 0px;
+    margin-bottom: 2px;
+    color: grey;
+}
+
+.h5 {
+    font-size: calc(80% + .8vw);
+}
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ .hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hide {
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  } 
