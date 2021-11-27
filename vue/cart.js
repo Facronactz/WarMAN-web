@@ -1,47 +1,35 @@
 var vue = new Vue({
-    el: "#vue",
+    el: '#app',
     data: {
-        Menu: {
-            id: localStorage.Menu_id,
-            Name: localStorage.Menu_Name,
-            Price: localStorage.Menu_Price,
-            Img: localStorage.Menu_Img,
-            Desc: localStorage.Menu_Desc,
+        Cart: {
+            
         },
+        Menus: MenuDB,
+        Menu_Name: '',
+        Menu_Amount: 0
+    },
+    created: function(){
+        this.fetchCart();
     },
     methods: {
-        // printArr: function (arr) {
-        //     let str = "";
-        //     for (let item of arr) {
-        //         if (Array.isArray(item)) str += this.printArr(item);
-        //         if (condition) {
-
-        //         }
-        //         else str += item + "_";
-        //     }
-        //     return str;
-        // },
-        addCart(menu) {
-            if(typeof localStorage.Cart !== 'undefined'){
-                var item = JSON.parse( localStorage.Cart);
-                if (item[menu]) {
-                    item[menu] += 1
-                }
-                else{
-                    item[menu] = 1
-                }
-                localStorage.Cart = JSON.stringify(item);
-
-            }
-            else {
-                var obj = {};
-                obj[menu] = 1;
-                localStorage.Cart = JSON.stringify(obj)
-            }
-
-        }
-    }
-        //  RIP
+        fetchCart: function(){
+            var parseCrot = JSON.parse(localStorage.Cart)
+            this.Cart = parseCrot;
+        },
+        Show: function(Menus, Cart){
+            var menu = Menus.find((Menu, index) => Menu.id == Cart)
+            this.Menu_Name = menu.Name;
+            this.Menu_Amount = this.Cart[Cart];
+        },
+        // addCart(id, element){
+        //     var crot = localStorage.Cart;
+        //     var parseCrot = JSON.parse(crot);
+        //     parseCrot[id] = element.value;
+        //     console.log(parseCrot);
+        //     localStorage.Cart = JSON.stringify(parseCrot);
+        // }
+        // RIP
+        // addCart(menu, amount) {
         //     if (typeof localStorage.Cart !== "undefined") {
         //         var crot = localStorage;
         //         var parseCrot = crot.Cart.split(",").map(function (x) { return x.split("_").map(Number) });
@@ -49,7 +37,7 @@ var vue = new Vue({
         //         for (let index = 0; index < parseCrot.length; index++) {
         //             if (parseInt(menu) === parseCrot[index][0]) {
         //                 ada = index;
-        //                 parseCrot[index][1] += 1;
+        //                 parseCrot[index][1] = amount;
         //                 let str = ""
         //                 var i = 0
         //                 for (i; i < parseCrot.length; ++i) {
@@ -63,7 +51,7 @@ var vue = new Vue({
         //                 crot.Cart = str;
         //                 break;
         //             } else if (parseCrot.length === index + 1) {
-        //                 crot.Cart += "," + menu + "_" + 1;
+        //                 crot.Cart = "," + menu + "_" + amount;
         //             }
         //         }
         //         //   if (parseInt(menu) === parseCrot[ada][0]) {
@@ -78,9 +66,6 @@ var vue = new Vue({
         //         localStorage.Cart = menu + "_" + 1;
         //     }
         // },
-    // },
-});
+    }
 
-// function showCart(){
-//     var parseCrot = LocalStorage.Cart.split(",").map(function (x) { return x.split("_").map(Number)});
-// }
+})

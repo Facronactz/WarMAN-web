@@ -2,7 +2,7 @@ function darkMode() {
   if (localStorage.dark) {
     localStorage.removeItem("dark");
   } else {
-    localStorage.setItem("dark", true);
+    localStorage.dark = true;
   }
 
   var element = document.body;
@@ -22,13 +22,14 @@ function darkMode() {
   ["bg-dark", "text-white"].map((v) => element.classList.toggle(v));
   ["bg-light", "navbar-light"].map((v) => nav.toggle(v));
   ["bg-dark", "navbar-dark"].map((v) => nav.toggle(v));
+  
+  var i = document.getElementById("i").classList;
+  i.toggle("i-black");
 
   var botB = document.getElementById("botB").classList;
   ["bg-light", "navbar-light"].map((v) => botB.toggle(v));
   ["bg-dark", "navbar-dark"].map((v) => botB.toggle(v));
 
-  var i = document.getElementById("i").classList;
-  i.toggle("i-black");
 }
 
 function isdarkMode() {
@@ -47,12 +48,13 @@ function isdarkMode() {
     ["bg-dark", "text-white"].map((v) => element.classList.toggle(v));
     ["bg-light", "navbar-light"].map((v) => nav.toggle(v));
     ["bg-dark", "navbar-dark"].map((v) => nav.toggle(v));
+    
+    var i = document.getElementById("i").classList;
+    i.toggle("i-black");
 
     var botB = document.getElementById("botB").classList;
     ["bg-light", "navbar-light"].map((v) => botB.toggle(v));
     ["bg-dark", "navbar-dark"].map((v) => botB.toggle(v));
 
-    var i = document.getElementById("i").classList;
-    i.toggle("i-black");
   }
 }

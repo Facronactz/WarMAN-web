@@ -24,43 +24,23 @@
     <meta name="msapplication-TileColor" content="#ff6767">
     <meta name="theme-color" content="#ff2a2a">
 
-    <style>
-        .img-relative {
-            position: relative;
-            text-align: center;
-            color: white;
-        }
-
-        .center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
-
     <title>WarMAN</title>
 </head>
 
-<body class="container-fluid" style="max-width: 950px">
-    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="restaurant.html"><i class="fa fa-chevron-left" aria-hidden="true">
-                    Back</i></a>
-            <button onclick="darkMode()" class="btn">
-                <i id="i" class="fas fa-adjust"></i>
-            </button>
-        </div>
-    </nav>
+<body class="container-fluid hide" style="max-width: 950px">
 
-    <div id="vue">
+    <div id="navT" class="sticky-top">
+        <nav-back></nav-back>
+    </div>
+
+    <div id="vue" class="pb-5 pt-1">
         <div v-for="Menu in Menus">
             <div v-if="Menu.Restaurant === Restaurant.id">
                 <a @click="persist(Menu)" href="/detailMenu.html" id="card" class="card mb-3 border-dark">
                     <div class="card-body img-relative" style="padding: 0;">
                         <img class="card-img" :src="Menu.img" alt=""
                             style="max-height: 10rem; object-fit: cover; filter:brightness(50%)">
-                        <div class="center">
+                        <div class="txt-center">
                             <h4>{{Menu.Name}}</h4>
                             <h5>Rp.{{Menu.Price}}</h5>
                         </div>
@@ -70,8 +50,13 @@
         </div>
     </div>
 
-    <script src="script/dbMenu.js"></script>
+    <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
+        <nav-bottom></nav-bottom>
+    </div>
 
+    <!-- Script Dump -->
+    <script src="vue/navBar.js"></script>
+    <script src="script/dbMenu.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/darkmode.js"></script>
     <script> isdarkMode() </script>

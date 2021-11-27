@@ -25,24 +25,15 @@
 
     <title>WarMAN</title>
 
-    <style>
-        
-    </style>
-
-    <title>Hello, world!</title>
 </head>
 
-<body class="container-sm" style="max-width: 950px">
+<body class="container-sm" style="max-width: 950px; height: auto; max-height:100vh">
 
-    <nav id="nav" class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><i class="fa fa-chevron-left" aria-hidden="true"> Back</i></a>
-            <button onclick="darkMode()" class="btn">
-                <i id="i" class="fas fa-adjust"></i>
-            </button>
-        </div>
-    </nav>
-    <div id="vue">
+    <div id="navT" class="sticky-top">
+        <nav-back></nav-back>
+    </div>
+
+    <div id="main" class="pb-5">
         <div class="img-relative">
             <img :src="Restaurant.Img" style="width:100%" alt="">
             <div class="btm-left">
@@ -58,27 +49,19 @@
                 </div>
             </div>
         </div>
+
         <div class="row my-2 mx-0">
             <a class="btn btn-primary" style="width: 100%" href="/menu.html">Menu</a>
         </div>
     </div>
 
-    <script>
-        var vue = new Vue({
-            el: '#vue',
-            data: {
-                Restaurant: {
-                    id: localStorage.id,
-                    Name: localStorage.Name,
-                    'Open hour': localStorage.Jam,
-                    Location: localStorage.Loc,
-                    Img: localStorage.Img,
-                    Description: localStorage.Desc
-                }
-            }
-        })
-    </script>
+    <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
+        <nav-bottom></nav-bottom>
+    </div>
 
+    <!-- Script Dump -->
+    <script src="script/getRestauarant.js"></script>
+    <script src="vue/navBar.js"></script>
     <script src="/script/darkmode.js"></script>
     <script src="bootstrap\js\bootstrap.min.js"></script>
     <script> isdarkMode() </script>

@@ -33,22 +33,45 @@
         <nav-back></nav-back>
     </div>
 
-    <div id="vue">
-        <h1>{{Menu.Name}}</h1>
-        <img :src="Menu.Img" alt="" style="width: 100%; object-fit: cover" />
-        <h6 class="mt-1">{{Menu.Desc}}</h6>
-        <h6>Rp.{{Menu.Price}}</h6>
-        <input type="number">
-        <a @click="addCart(Menu.id)" class="btn btn-primary" style="width: 100%">Add to Cart</a>
+    <div id="app">
+        <div v-for="(cart, id) in Cart" class="row justify-content-between">
+            <div class="col-auto">
+                {{Show(Menus, id)}}
+                {{Menu_Name}}
+                <input :value="Menu_Amount" type="number" :id="id" onchange="addCart(this.value, this.id)">
+            </div>
+            <a class="col-auto btn btn-primary me-2">x</a>
+        </div>
     </div>
 
     <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
-        <nav-bottom></nav-bottom>
+        <nav-bottom2></nav-bottom2>
     </div>
 
     <!-- Script Dump -->
+
+    <script>
+        function addCart(value, id){
+            var crot = localStorage.Cart;
+            var parseCrot = JSON.parse(crot);
+            if(value == 0) {
+                delete parseCrot[id];
+                localStorage.Cart = JSON.stringify(parseCrot);
+                location.reload()
+            }
+            else 
+            {
+                parseCrot[id] = parseInt(value);
+            // console.log(parseCrot);
+                localStorage.Cart = JSON.stringify(parseCrot);
+            }
+        }
+    </script>
+
+    <script src="script/dbMenu.js"></script>
+    <script src="vue/cart.js"></script>
+
     <script src="vue/navBar.js"></script>
-    <script src="script/func.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/darkmode.js"></script>
     <script> isdarkMode(); </script>
