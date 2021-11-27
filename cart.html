@@ -33,7 +33,7 @@
         <nav-back></nav-back>
     </div>
 
-    <div id="app">
+    <div id="main">
         <div v-for="(cart, id) in Cart" class="row justify-content-between">
             <div class="col-auto">
                 {{Show(Menus, id)}}
@@ -68,7 +68,7 @@
         }
     </script>
 
-    <script src="script/dbMenu.js"></script>
+    <script src="db/dbMenu.js"></script>
     <script src="vue/cart.js"></script>
 
     <script src="vue/navBar.js"></script>

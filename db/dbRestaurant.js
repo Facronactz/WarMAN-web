@@ -1,5 +1,5 @@
 var vue = new Vue({
-  el: "#vue",
+  el: "#main",
   data: {
     Restaurant: [
       {

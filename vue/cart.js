@@ -1,5 +1,5 @@
 var vue = new Vue({
-    el: '#app',
+    el: '#main',
     data: {
         Cart: {
             
@@ -20,7 +20,7 @@ var vue = new Vue({
             var menu = Menus.find((Menu, index) => Menu.id == Cart)
             this.Menu_Name = menu.Name;
             this.Menu_Amount = this.Cart[Cart];
-        },
+        }
         // addCart(id, element){
         //     var crot = localStorage.Cart;
         //     var parseCrot = JSON.parse(crot);

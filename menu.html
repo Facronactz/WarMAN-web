@@ -33,7 +33,7 @@
         <nav-back></nav-back>
     </div>
 
-    <div id="vue" class="pb-5 pt-1">
+    <div id="main" class="pb-5 pt-1">
         <div v-for="Menu in Menus">
             <div v-if="Menu.Restaurant === Restaurant.id">
                 <a @click="persist(Menu)" href="/detailMenu.html" id="card" class="card mb-3 border-dark">
@@ -56,7 +56,7 @@
 
     <!-- Script Dump -->
     <script src="vue/navBar.js"></script>
-    <script src="script/dbMenu.js"></script>
+    <script src="db/dbMenu.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/darkmode.js"></script>
     <script> isdarkMode() </script>

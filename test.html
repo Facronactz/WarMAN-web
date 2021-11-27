@@ -23,14 +23,14 @@
   <meta name="application-name" content="WarMAN" />
   <meta name="msapplication-TileColor" content="#ff6767" />
   <meta name="theme-color" content="#ff2a2a" />
-  <script src="script/dbMenu.js"></script>
+  <script src="db/dbMenu.js"></script>
 
   <title>WarMAN</title>
 </head>
 
 
 <body class="container-fluid" style="max-width: 950px">
-  <div id="vue">
+  <div id="main">
     <nav-bar></nav-bar> 
     <h1>{{Menu.Name}}</h1>
     <img :src="Menu.Img" alt="" style="width: 100%; object-fit: cover" />
@@ -48,7 +48,7 @@
 </script>
 <script>
   var vue = new Vue({
-    el: "#vue",
+    el: "#main",
     data: {
       Menu: {
         id: localStorage.Menu_id,
