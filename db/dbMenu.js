@@ -82,7 +82,7 @@ var MenuDB = [
 ]
 
 var vue = new Vue({
-  el: "#main",
+  el: "#app",
   data: {
     Restaurant: {
       id: localStorage.id,

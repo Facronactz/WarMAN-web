@@ -33,7 +33,7 @@
         <nav-back></nav-back>
     </div>
 
-    <div id="main" class="pb-5 pt-1">
+    <div id="app" class="pb-5 pt-1">
         <div v-for="Menu in Menus">
             <div v-if="Menu.Restaurant === Restaurant.id">
                 <a @click="persist(Menu)" href="/detailMenu.html" id="card" class="card mb-3 border-dark">

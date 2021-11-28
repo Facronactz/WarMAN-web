@@ -37,7 +37,7 @@ Vue.component('nav-back', {
   template: `
   <nav id="nav" class="navbar navbar-expand-sm navbar-light bg-light">
       <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><i class="fa fa-chevron-left" aria-hidden="true"> Back</i></a>
+          <a class="navbar-brand" onclick="history.go(-1)" style="cursor: pointer"><i class="fa fa-chevron-left" aria-hidden="true"> Back</i></a>
           <button onclick="darkMode()" class="btn">
               <i id="i" class="fas fa-adjust"></i>
           </button>

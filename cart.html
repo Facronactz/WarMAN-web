@@ -35,23 +35,25 @@
 
     <div id="main">
         <div v-for="(cart, id) in Cart" class="row justify-content-between">
-            <div class="col-auto">
+            <div class="col-auto my-auto">
                 {{Show(Menus, id)}}
                 {{Menu_Name}}
-                <input :value="Menu_Amount" type="number" :id="id" onchange="addCart(this.value, this.id)">
             </div>
-            <a class="col-auto btn btn-primary me-2">x</a>
+            <div class="input-group col-auto w-auto">
+                <input class="col-auto" :value="Menu_Amount" type="number" :id="id" onchange="updateCart(this.value, this.id)">
+                <a class="col-auto btn btn-primary me-2">x</a>
+            </div>
         </div>
     </div>
-
-    <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
+        
+        <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
         <nav-bottom2></nav-bottom2>
     </div>
 
     <!-- Script Dump -->
 
     <script>
-        function addCart(value, id){
+        function updateCart(value, id){
             var crot = localStorage.Cart;
             var parseCrot = JSON.parse(crot);
             if(value == 0) {
@@ -70,7 +72,6 @@
 
     <script src="db/dbMenu.js"></script>
     <script src="vue/cart.js"></script>
-
     <script src="vue/navBar.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/darkmode.js"></script>

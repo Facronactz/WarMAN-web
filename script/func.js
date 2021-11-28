@@ -7,7 +7,11 @@ var vue = new Vue({
             Price: localStorage.Menu_Price,
             Img: localStorage.Menu_Img,
             Desc: localStorage.Menu_Desc,
+            Amount: 0
         }
+    },
+    created() {
+        this.getCart(localStorage.Menu_id)
     },
     methods: {
         // printArr: function (arr) {
@@ -21,21 +25,44 @@ var vue = new Vue({
         //     }
         //     return str;
         // },
-        addCart(menu) {
+        updateCart(menu, value) {
             if (typeof localStorage.Cart !== 'undefined') {
                 var item = JSON.parse(localStorage.Cart);
                 if (item[menu]) {
-                    item[menu] += 1
+                    item[menu] += value;
                 }
                 else {
                     item[menu] = 1
                 }
+                this.Menu.Amount = item[menu]
                 localStorage.Cart = JSON.stringify(item);
             }
             else {
                 var obj = {};
                 obj[menu] = 1;
                 localStorage.Cart = JSON.stringify(obj)
+                this.Menu.Amount = obj[menu]
+            }
+        },
+        getCart(menu) {
+            if (typeof localStorage.Cart !== 'undefined') {
+                var parseCart = JSON.parse(localStorage.Cart);
+                if(parseCart[menu] !== undefined) {
+                    this.Menu.Amount = parseCart[menu]
+                }
+                return this.Amount;
+            }
+            else this.Amount = 0;
+        },
+        addCart(menu, amount) {
+            var parseCart = JSON.parse(localStorage.Cart);
+            if(amount == 0) {
+                delete parseCart[menu];
+                localStorage.Cart = JSON.stringify(parseCart);
+            }
+            else if (typeof localStorage.Cart !== 'undefined') {
+                parseCart[menu] = parseInt(amount); 
+                localStorage.Cart = JSON.stringify(parseCart);
             }
         }
     }

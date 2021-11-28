@@ -38,8 +38,11 @@
         <img :src="Menu.Img" alt="" style="width: 100%; object-fit: cover" />
         <h6 class="mt-1">{{Menu.Desc}}</h6>
         <h6>Rp.{{Menu.Price}}</h6>
-        <input type="number">
-        <a @click="addCart(Menu.id)" class="btn btn-primary" style="width: 100%">Add to Cart</a>
+        <div class="input-group">
+            <a @click="updateCart(Menu.id, -1)"class="btn btn-primary">-</a>
+            <input class="form-control" type="number" @change="addCart(Menu.id, Menu.Amount)" :value="Menu.Amount" @input="Menu.Amount=$event.target.value" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" min="0"/>
+            <a @click="updateCart(Menu.id, 1)"class="btn btn-primary">+</a>
+        </div>
     </div>
 
     <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
