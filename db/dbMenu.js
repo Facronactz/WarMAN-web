@@ -10,7 +10,7 @@ var MenuDB = [
   {
     id: "2",
     Name: "Pecel",
-    Price: "10.000",
+    Price: "10000",
     Desc: "Some sort of descriptionof the product",
     Restaurant: "1",
     img: "https://3.bp.blogspot.com/-l9XIcybK9Rc/WKphvod0WRI/AAAAAAAAEDo/HhVl_WmaSQQIAxnsvv3LOzPG-5jEgw1mQCLcB/s1600/pecel.jpg",
@@ -18,7 +18,7 @@ var MenuDB = [
   {
     id: "3",
     Name: "Pecel Lele",
-    Price: "10.000",
+    Price: "10000",
     Desc: "Some sort of descriptionof the product",
     Restaurant: "1",
     img: "https://th.bing.com/th/id/OIP.LlMdyNgBDMnr_DWMtuv50QHaE8?w=261&h=180&c=7&r=0&o=5&pid=1.7",
@@ -42,7 +42,7 @@ var MenuDB = [
   {
     id: "6",
     Name: "Bebek Goreng",
-    Price: "12.500",
+    Price: "12500",
     Desc: "Some sort of descriptionof the product",
     Restaurant: "3",
     img: "https://th.bing.com/th/id/OIP.1fYIChn1AReiAcq2AHrQUwHaE8?w=291&h=194&c=7&r=0&o=5&pid=1.7",
@@ -58,7 +58,7 @@ var MenuDB = [
   {
     id: "8",
     Name: "Sayur Sop",
-    Price: "6.500",
+    Price: "6500",
     Desc: "Some sort of descriptionof the product",
     Restaurant: "2",
     img: "https://th.bing.com/th/id/OIP.8mJaLevlv9j5BYDiOXRIIgHaD9?w=315&h=180&c=7&r=0&o=5&pid=1.7",

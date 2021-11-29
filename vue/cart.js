@@ -5,22 +5,68 @@ var vue = new Vue({
             
         },
         Menus: MenuDB,
-        Menu_Name: '',
-        Menu_Amount: 0
+        Menu_Name: {
+
+        },
+        Menu_Price: {
+
+        },
+
+        Total_Price: {
+
+        },
+        Total_Total: 0,
+        // totalTotal: 0
     },
     created: function(){
         this.fetchCart();
+        
+        for(const id in this.Cart) {
+            if(this.Cart[id] <= 0) {
+                delete this.Cart[id];
+            }
+        }
+
+        localStorage.Cart = JSON.stringify(this.Cart);
     },
     methods: {
         fetchCart: function(){
             var parseCrot = JSON.parse(localStorage.Cart)
             this.Cart = parseCrot;
+            localStorage.removeItem('Total')
         },
         Show: function(Menus, Cart){
-            var menu = Menus.find((Menu, index) => Menu.id == Cart)
-            this.Menu_Name = menu.Name;
-            this.Menu_Amount = this.Cart[Cart];
+            var menu = Menus.find((Menu, _index) => Menu.id == Cart)
+            // var arr = Object.entries(Cart)
+            // var menu = arr.find((Menu, _index) => Menu.id == Menus.id)
+            // this.Menu_Name = menu.Name;
+            // this.Menu_Amount = this.Cart[Cart];
+            // this.Menu_Price = menu.Price * this.Menu_Amount
+            this.Menu_Name[menu.id] = menu.Name;
+            this.Menu_Price[menu.id] = menu.Price;
+            this.Total_Price[menu.id] = menu.Price * this.Cart[menu.id];
         },
+        // StoreData: function(){
+        //     // this.Total_Total += parseInt(this.Menu_Price);
+        //     // console.log(parseInt(this.Menu_Price));
+        // },
+        remove: function(i){
+            this.Cart[i] = 0;
+            this.compPrice[i];
+            // localSt,orage.Cart = this.Cart;
+        },
+
+        changeValue: function(id) {
+            if(this.Cart[id] <= 0) {
+                this.Cart[id] = 0;
+                this.compPrice[id];
+            }
+        }
+        // Price: function(Amount){
+        //     HarTot = this.Menu_Price*Amount;
+        //     localStorage.Total = HarTot;
+        //     // return HarTot;
+        // }
         // addCart(id, element){
         //     var crot = localStorage.Cart;
         //     var parseCrot = JSON.parse(crot);
@@ -66,6 +112,52 @@ var vue = new Vue({
         //         localStorage.Cart = menu + "_" + 1;
         //     }
         // },
+    },
+    computed: {
+        compPrice:  {
+            get: function() {
+                // console.log("call");
+
+                this.Total_Total = 0;
+                for (const id in this.Total_Price) {
+                    if(this.Cart[id] <= 0) {
+                        this.Cart[id] = 0;
+                    }
+                    this.Total_Price[id] = this.Menu_Price[id] * this.Cart[id];
+                    this.totalTotal = this.Total_Price[id]
+                }
+
+                localStorage.Cart = JSON.stringify(this.Cart);
+
+                return this.Total_Price;
+            }
+        },
+        totalTotal: {
+            get: function() {
+                this.Total_Total = 0;
+
+                for (const id in this.Total_Price) {
+                    if(this.Cart[id] <= 0) {
+                        this.Cart[id] = 0;
+                    }
+                    this.Total_Total += this.Total_Price[id];
+                }
+
+                return this.Total_Total;
+            },
+            set: function(val) {
+                this.Total_Total += val;
+            }
+        },
+        // updateCart: function() {
+        //     this.Total_Price = this.Menu_Amount * this.Menu_Price
+        // },
+    },
+
+    watch: {
+        Cart: function(val) {
+            console.log("Cart");
+        }
     }
 
 })

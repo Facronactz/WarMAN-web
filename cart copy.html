@@ -34,25 +34,23 @@
     </div>
 
     <div id="main">
-        <div v-for="(cart, id) in Cart" >
-            <div v-if="Cart[id] > 0" class="row justify-content-between">
-                <div class="col-auto my-auto">
-                    {{Show(Menus, id)}}
-                    {{Menu_Name[id]}}
-                </div>
-                <div class="input-group col-auto w-auto">
-                    <input class="col-auto" type="number" :id="id" v-model.number="Cart[id]" @change="changeValue(id)">
-                    <a class="col-auto btn btn-primary me-2" :id="id" @click="remove(id)">x</a>
-                </div>
-                <div class="col-auto far-row">
-                    {{ compPrice[id] }}
-                </div>
+        <div v-for="(cart, id) in Cart" class="row justify-content-between">
+            <div class="col-auto my-auto">
+                {{Show(Menus, id)}}
+                {{Menu_Name}}
+            </div>
+            <div class="input-group col-auto w-auto">
+                <input class="col-auto" :value="Menu_Amount" type="number" v-model.number="Menu_Amount" :id="id" onchange="updateCart(this.value, this.id)">
+                <a class="col-auto btn btn-primary me-2" :id="id" onclick="updateCart(0, this.id)">x</a>
+            </div>
+            <div class="col-auto far-row">
+                {{compPrice}}
             </div>
         </div>
-        {{totalTotal}}
     </div>
     
     <div id="total">
+        {{Total}}
     </div>
         
     <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
@@ -83,11 +81,12 @@
             }
             else
             {
+                
+
                 parseCrot[id] = parseInt(value);
             // console.log(parseCrot);
                 localStorage.Cart = JSON.stringify(parseCrot);
             }
-            // location.reload();
 
             saveTotal();
         };
@@ -113,7 +112,7 @@
         new Vue({
             el: '#total',
             data: {
-                Total_Total: localStorage.Total
+                Total: localStorage.Total
             }
         })
     </script>
