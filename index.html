@@ -37,6 +37,10 @@
 
     <!-- Main -->
     <div id="main" class="container-fluid pb-5">
+        <div class="form-floating mb-3">
+            <input v-model="Search" type="text" class="form-control" id="floatingInput" placeholder="Search">
+            <label for="floatingInput">Search</label>
+        </div>
         <div v-for="Restaurant in Restaurant">
             <div id="card" class="card my-3 border-dark shadow-lg" style="max-width: 100%">
                 <div class="card-header">

@@ -34,6 +34,10 @@
     </div>
 
     <div id="app" class="pb-5 pt-1">
+        <div class="form-floating mb-3">
+            <input v-model="Search" type="text" class="form-control" id="floatingInput" placeholder="Search">
+            <label for="floatingInput">Search</label>
+        </div>
         <div v-for="Menu in Menus">
             <div v-if="Menu.Restaurant === Restaurant.id">
                 <a @click="persist(Menu)" href="/detailMenu.html" id="card" class="card mb-3 border-dark">

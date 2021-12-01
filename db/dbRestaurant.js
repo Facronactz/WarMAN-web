@@ -1,7 +1,8 @@
 var vue = new Vue({
   el: "#main",
   data: {
-    Restaurant: [
+    Search: null,
+    DB: [
       {
         id: 1,
         Name: "Kediri Cafe",
@@ -83,6 +84,16 @@ var vue = new Vue({
         img: "media/restaurant1.webp",
       },
     ],
+  },
+  computed: {
+    Restaurant(){
+      if(this.Search){
+        return this.DB.filter((item)=>{
+          return this.Search.toLowerCase().split(' ').every(v => item.Name.toLowerCase().includes(v) || item.Loc.toLowerCase().includes(v))
+        })
+      }
+      else return this.DB;
+    }
   },
   methods: {
     persist(index) {
