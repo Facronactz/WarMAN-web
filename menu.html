@@ -42,7 +42,7 @@
                             style="max-height: 10rem; object-fit: cover; filter:brightness(50%)">
                         <div class="txt-center">
                             <h4>{{Menu.Name}}</h4>
-                            <h5>Rp.{{Menu.Price}}</h5>
+                            <h5>{{Menu.Price | toCurrency}}</h5>
                         </div>
                     </div>
                 </a>
@@ -56,6 +56,7 @@
 
     <!-- Script Dump -->
     <script src="vue/navBar.js"></script>
+    <script src="vue/filter.js"></script>
     <script src="db/dbMenu.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/darkmode.js"></script>

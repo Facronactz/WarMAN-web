@@ -36,23 +36,34 @@
     <div id="main">
         <div v-for="(cart, id) in Cart" >
             <div v-if="Cart[id] > 0" class="row justify-content-between">
-                <div class="col-auto my-auto">
+                <div class="col-4 my-auto">
                     {{Show(Menus, id)}}
                     {{Menu_Name[id]}}
                 </div>
-                <div class="input-group col-auto w-auto">
-                    <input class="col-auto" type="number" :id="id" v-model.number="Cart[id]" @change="changeValue(id)">
-                    <a class="col-auto btn btn-primary me-2" :id="id" @click="remove(id)">x</a>
+                <div class="col-3">
+                    <input class="form-control text-center" type="number" :id="id" v-model.number="Cart[id]" @change="changeValue(id)">
                 </div>
-                <div class="col-auto far-row">
-                    {{ compPrice[id] }}
+                <div class="col-3 my-auto far-row">
+                    {{ compPrice[id] | toCurrency }}
                 </div>
+                <a class="col-auto btn btn-primary me-2" :id="id" @click="remove(id)">x</a>
             </div>
         </div>
-        {{totalTotal}}
-    </div>
-    
-    <div id="total">
+        <hr>
+        <div>
+            <div class="row justify-content-between">
+                <div class="col-4 "></div>
+                <div class="col-3"></div>
+                <div class="col-3 my-auto far-row">
+                    {{totalTotal|toCurrency}}
+                </div>
+                <div class="col-auto btn btn-primary me-2 invisible">x</div>
+                <!-- <div class="col-3 offset-8">
+                    {{totalTotal|toCurrency}}
+                </div> -->
+            </div>
+        </div>
+
     </div>
         
     <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
@@ -61,7 +72,7 @@
 
     <!-- Script Dump -->
 
-    <script>
+    <!-- <script>
          function saveTotal() {
             const rows = document.getElementsByClassName("far-row");
             let totalCart = 0;
@@ -96,27 +107,15 @@
         //     console.log(parseInt(this.Menu_Price));
         //     localStorage.Total = this.Total;
         // },
-    </script>
+    </script> -->
 
+    <script src="vue/filter.js"></script>
     <script src="db/dbMenu.js"></script>
     <script src="vue/cart.js"></script>
     <script src="vue/navBar.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/darkmode.js"></script>
-    <script>
-        
-        saveTotal();
-
-        isdarkMode();
-    </script>
-    <script>
-        new Vue({
-            el: '#total',
-            data: {
-                Total_Total: localStorage.Total
-            }
-        })
-    </script>
+    <script>isdarkMode();</script>
 </body>
 
 </html>

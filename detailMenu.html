@@ -37,11 +37,21 @@
         <h1>{{Menu.Name}}</h1>
         <img :src="Menu.Img" alt="" style="width: 100%; object-fit: cover" />
         <h6 class="mt-1">{{Menu.Desc}}</h6>
-        <h6>Rp.{{Menu.Price}}</h6>
-        <div class="input-group">
-            <a @click="updateCart(Menu.id, -1)"class="btn btn-primary">-</a>
-            <input class="form-control" type="number" @change="addCart(Menu.id, Menu.Amount)" :value="Menu.Amount" @input="Menu.Amount=$event.target.value" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" min="0"/>
-            <a @click="updateCart(Menu.id, 1)"class="btn btn-primary">+</a>
+        <div class="row justify-content-between">
+            <h6 class="col-auto my-auto">{{Menu.Price|toCurrency}}</h6>
+            <div class="col-4">
+                <div class="input-group">
+                    <a @click="updateCart(Menu.id, -1)"class="btn btn-primary">-</a>
+                    <input class="form-control text-center" type="number" @change="addCart(Menu.id, Menu.Amount)" :value="Menu.Amount" @input="Menu.Amount=$event.target.value" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" min="0"/>
+                    <a @click="updateCart(Menu.id, 1)"class="btn btn-primary">+</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-auto offset-9">
+                {{Menu.Price * Menu.Amount | toCurrency}}
+            </div>
         </div>
     </div>
 
@@ -51,6 +61,7 @@
 
     <!-- Script Dump -->
     <script src="vue/navBar.js"></script>
+    <script src="vue/filter.js"></script>
     <script src="script/func.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/darkmode.js"></script>
