@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
-    <script src="vue.js"></script>
+    <script src="vue/vue.js"></script>
     <link rel="stylesheet" href="script/additional.css" />
     <link rel="stylesheet" href="script/darkmode.css" />
 
@@ -30,14 +30,14 @@
 
 <body class="hide mx-auto" style="max-width: 950px">
     
-    <!-- Top Nav Bar -->
+    <!-- Top Bar -->
     <div id="navT" class="sticky-top">
         <nav-top></nav-top>
     </div>
 
     <!-- Main -->
     <div id="main" class="container-fluid pb-5">
-        <div class="form-floating mb-3">
+        <div class="form-floating my-3">
             <input v-model="Search" type="text" class="form-control" id="floatingInput" placeholder="Search">
             <label for="floatingInput">Search</label>
         </div>
@@ -55,14 +55,14 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a @click="persist(Restaurant)" href="/restaurant.html" class="btn btn-primary"
+                    <a @click="persist(Restaurant)" href="./restaurant.html" class="btn btn-primary"
                         style="width: 100%">Restaurant Detail</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bottom Nav Bar -->
+    <!-- Bottom Bar -->
     <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
        <nav-bottom></nav-bottom>
     </div>

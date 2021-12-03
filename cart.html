@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
-    <script src="vue.js"></script>
+    <script src="vue/vue.js"></script>
     <link rel="stylesheet" href="script/additional.css" />
     <link rel="stylesheet" href="script/darkmode.css" />
 
@@ -25,14 +25,17 @@
     <meta name="theme-color" content="#ff2a2a" />
 
     <title>WarMAN</title>
+    
 </head>
 
 <body class="container-fluid" style="max-width: 950px">
 
+    <!-- Top Bar -->
     <div id="navT" class="sticky-top">
         <nav-back></nav-back>
     </div>
 
+    <!-- Main -->
     <div id="main">
         <div v-for="(cart, id) in Cart" >
             <div v-if="Cart[id] > 0" class="row justify-content-between">
@@ -58,14 +61,11 @@
                     {{totalTotal|toCurrency}}
                 </div>
                 <div class="col-auto btn btn-primary me-2 invisible">x</div>
-                <!-- <div class="col-3 offset-8">
-                    {{totalTotal|toCurrency}}
-                </div> -->
             </div>
         </div>
-
     </div>
-        
+    
+    <!-- Bottom Bar -->
     <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
         <nav-bottom2></nav-bottom2>
     </div>
