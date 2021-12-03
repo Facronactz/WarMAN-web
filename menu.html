@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
-    <script src="vue.js"></script>
+    <script src="vue/vue.js"></script>
     <link rel="stylesheet" href="script/additional.css" />
     <link rel="stylesheet" href="script/darkmode.css" />
 
@@ -25,14 +25,17 @@
     <meta name="theme-color" content="#ff2a2a">
 
     <title>WarMAN</title>
+    
 </head>
 
 <body class="container-fluid hide" style="max-width: 950px">
 
+    <!-- Top Bar -->
     <div id="navT" class="sticky-top">
         <nav-back></nav-back>
     </div>
 
+    <!-- Main -->
     <div id="app" class="pb-5 pt-1">
         <div class="form-floating mb-3">
             <input v-model="Search" type="text" class="form-control" id="floatingInput" placeholder="Search">
@@ -54,6 +57,7 @@
         </div>
     </div>
 
+    <!-- Bottom Bar -->
     <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
         <nav-bottom></nav-bottom>
     </div>
