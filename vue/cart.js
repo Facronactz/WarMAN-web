@@ -16,7 +16,6 @@ var vue = new Vue({
 
         },
         Total_Total: 0,
-        // totalTotal: 0
     },
     created: function(){
         this.fetchCart();
@@ -37,23 +36,13 @@ var vue = new Vue({
         },
         Show: function(Menus, Cart){
             var menu = Menus.find((Menu, _index) => Menu.id == Cart)
-            // var arr = Object.entries(Cart)
-            // var menu = arr.find((Menu, _index) => Menu.id == Menus.id)
-            // this.Menu_Name = menu.Name;
-            // this.Menu_Amount = this.Cart[Cart];
-            // this.Menu_Price = menu.Price * this.Menu_Amount
             this.Menu_Name[menu.id] = menu.Name;
             this.Menu_Price[menu.id] = menu.Price;
             this.Total_Price[menu.id] = menu.Price * this.Cart[menu.id];
         },
-        // StoreData: function(){
-        //     // this.Total_Total += parseInt(this.Menu_Price);
-        //     // console.log(parseInt(this.Menu_Price));
-        // },
         remove: function(i){
             this.Cart[i] = 0;
             this.compPrice[i];
-            // localSt,orage.Cart = this.Cart;
         },
 
         changeValue: function(id) {
@@ -116,8 +105,6 @@ var vue = new Vue({
     computed: {
         compPrice:  {
             get: function() {
-                // console.log("call");
-
                 this.Total_Total = 0;
                 for (const id in this.Total_Price) {
                     if(this.Cart[id] <= 0) {
@@ -149,9 +136,6 @@ var vue = new Vue({
                 this.Total_Total += val;
             }
         },
-        // updateCart: function() {
-        //     this.Total_Price = this.Menu_Amount * this.Menu_Price
-        // },
     },
 
     watch: {

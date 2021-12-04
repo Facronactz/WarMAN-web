@@ -10,6 +10,7 @@
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
     <script src="vue/vue.js"></script>
+    <script src="vue/vue-router.js"></script>
     <link rel="stylesheet" href="script/additional.css" />
     <link rel="stylesheet" href="script/darkmode.css" />
 
@@ -54,9 +55,9 @@
                         {{Restaurant.Desc.split(" ", 10).join(" ")+"..."}}
                     </p>
                 </div>
-                <div class="card-footer">
-                    <a @click="persist(Restaurant)" href="/restaurant.html" class="btn btn-primary"
-                        style="width: 100%">Restaurant Detail</a>
+                <div id="router" class="card-footer">
+                    <router-link to="/foo" @click="persist(Restaurant)" class="btn btn-primary"
+                        style="width: 100%">Restaurant Detail</router-link>
                 </div>
             </div>
         </div>
@@ -66,8 +67,9 @@
     <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
        <nav-bottom></nav-bottom>
     </div>
-
+    
     <!-- Script Dump -->
+    <script src="vue/restaurant.js"></script>
     <script src="vue/navBar.js"></script>
     <script src="db/dbRestaurant.js"></script>
     <script src="script/darkmode.js"></script>
