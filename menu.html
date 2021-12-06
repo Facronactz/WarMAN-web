@@ -43,7 +43,7 @@
         </div>
         <div v-for="Menu in Menus">
             <div v-if="Menu.Restaurant === Restaurant.id">
-                <a @click="persist(Menu)" href="/detailMenu.html" id="card" class="card mb-3 border-dark">
+                <a @click="persist(Menu)" href="./detailMenu.html" id="card" class="card mb-3 border-dark">
                     <div class="card-body img-relative" style="padding: 0;">
                         <img class="card-img" :src="Menu.img" alt=""
                             style="max-height: 10rem; object-fit: cover; filter:brightness(50%)">
