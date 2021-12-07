@@ -6,7 +6,7 @@ class Auth extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('auth_model');
+		$this->load->model('db/auth_model');
 	}
 
 	public function login()
@@ -18,7 +18,7 @@ class Auth extends CI_Controller {
 			$password = $this->input->post('password');
 			echo json_encode($this->auth_model->login($username,$password));
 		} else {
-			$this->load->view('auth/login');
+			$this->load->view('login.php');
 		}
 	}
 
@@ -36,7 +36,7 @@ class Auth extends CI_Controller {
 				echo json_encode('gagal');
 			}
 		} else {
-			$this->load->view('auth/register');
+			$this->load->view('register.php');
 		}
 	}
 
