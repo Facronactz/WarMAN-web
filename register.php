@@ -2,7 +2,7 @@
 <html lang="en">
  
 <head>
-    <?php $this->load->view('_partials/head'); ?>
+    <?php $this->load->view('db/head'); ?>
     <title>Dashboard</title>
     <style>
         html,
@@ -51,8 +51,8 @@
 
     <!-- ============================================================== -->
     <!-- Optional JavaScript -->
-    <?php $this->load->view('_partials/foot'); ?>
-    <script src="<?php echo base_url() ?>assets/concept-master/assets/vendor/parsley/parsley.js"></script>
+    <?php $this->load->view('db/foot'); ?>
+    <script src="<?php echo base_url() ?>db/parsley.js"></script>
     <script>
         $(document).ready(() => {
             $('form').parsley()
