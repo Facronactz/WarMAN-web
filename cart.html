@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,9 +10,12 @@
     <!-- Bootstrap CSS -->
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
+    <!-- Vue -->
     <script src="vue/vue.js"></script>
+    <!-- Additional CSS -->
     <link rel="stylesheet" href="script/additional.css" />
     <link rel="stylesheet" href="script/darkmode.css" />
+    <link rel="stylesheet" href="script/loading.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
@@ -24,11 +28,16 @@
     <meta name="msapplication-TileColor" content="#ff6767" />
     <meta name="theme-color" content="#ff2a2a" />
 
+    <!-- Title -->
     <title>WarMAN</title>
-    
 </head>
 
 <body class="container-fluid" style="max-width: 950px">
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <loading-div></loading-div>
+    </div>
 
     <!-- Top Bar -->
     <div id="navT" class="sticky-top">
@@ -37,14 +46,15 @@
 
     <!-- Main -->
     <div id="main">
-        <div v-for="(cart, id) in Cart" >
+        <div v-for="(cart, id) in Cart">
             <div v-if="Cart[id] > 0" class="row justify-content-between">
                 <div class="col-4 my-auto">
                     {{Show(Menus, id)}}
                     {{Menu_Name[id]}}
                 </div>
                 <div class="col-3">
-                    <input class="form-control text-center" type="number" :id="id" v-model.number="Cart[id]" @change="changeValue(id)">
+                    <input class="form-control text-center" type="number" :id="id" v-model.number="Cart[id]"
+                        @change="changeValue(id)">
                 </div>
                 <div class="col-3 my-auto far-row">
                     {{ compPrice[id] | toCurrency }}
@@ -64,7 +74,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Bottom Bar -->
     <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
         <nav-bottom2></nav-bottom2>
@@ -112,8 +122,9 @@
     <script src="vue/filter.js"></script>
     <script src="db/dbMenu.js"></script>
     <script src="vue/cart.js"></script>
-    <script src="vue/navBar.js"></script>
+    <script src="vue/template.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="script/loading.js"></script>
     <script src="script/darkmode.js"></script>
     <script>isdarkMode();</script>
 </body>

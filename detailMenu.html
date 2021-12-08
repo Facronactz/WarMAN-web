@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,9 +10,12 @@
     <!-- Bootstrap CSS -->
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
+    <!-- Vue -->
     <script src="vue/vue.js"></script>
+    <!-- Additional CSS -->
     <link rel="stylesheet" href="script/additional.css" />
     <link rel="stylesheet" href="script/darkmode.css" />
+    <link rel="stylesheet" href="script/loading.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
@@ -24,11 +28,16 @@
     <meta name="msapplication-TileColor" content="#ff6767" />
     <meta name="theme-color" content="#ff2a2a" />
 
+    <!-- Title -->
     <title>WarMAN</title>
-    
 </head>
 
 <body class="container-fluid" style="max-width: 950px">
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <loading-div></loading-div>
+    </div>
 
     <!-- Top Bar -->
     <div id="navT" class="sticky-top">
@@ -44,9 +53,11 @@
             <h6 class="col-auto my-auto">{{Menu.Price|toCurrency}}</h6>
             <div class="col-4">
                 <div class="input-group">
-                    <a @click="updateCart(Menu.id, -1)"class="btn btn-primary">-</a>
-                    <input class="form-control text-center" type="number" @change="addCart(Menu.id, Menu.Amount)" :value="Menu.Amount" @input="Menu.Amount=$event.target.value" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" min="0"/>
-                    <a @click="updateCart(Menu.id, 1)"class="btn btn-primary">+</a>
+                    <a @click="updateCart(Menu.id, -1)" class="btn btn-primary">-</a>
+                    <input class="form-control text-center" type="number" @change="addCart(Menu.id, Menu.Amount)"
+                        :value="Menu.Amount" @input="Menu.Amount=$event.target.value"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" min="0" />
+                    <a @click="updateCart(Menu.id, 1)" class="btn btn-primary">+</a>
                 </div>
             </div>
         </div>
@@ -64,12 +75,13 @@
     </div>
 
     <!-- Script Dump -->
-    <script src="vue/navBar.js"></script>
+    <script src="vue/template.js"></script>
     <script src="vue/filter.js"></script>
     <script src="script/func.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="script/loading.js"></script>
     <script src="script/darkmode.js"></script>
-    <script> isdarkMode(); </script>
+    <script> isdarkMode();</script>
 </body>
 
 </html>

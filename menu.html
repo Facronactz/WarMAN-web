@@ -3,32 +3,41 @@
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta Name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
     <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
+    <!-- Vue -->
     <script src="vue/vue.js"></script>
+    <!-- Additional CSS -->
     <link rel="stylesheet" href="script/additional.css" />
     <link rel="stylesheet" href="script/darkmode.css" />
+    <link rel="stylesheet" href="script/loading.css">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d55b5b">
-    <meta name="apple-mobile-web-app-title" content="WarMAN">
-    <meta name="application-name" content="WarMAN">
-    <meta name="msapplication-TileColor" content="#ff6767">
-    <meta name="theme-color" content="#ff2a2a">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d55b5b" />
+    <meta name="apple-mobile-web-app-title" content="WarMAN" />
+    <meta name="application-name" content="WarMAN" />
+    <meta name="msapplication-TileColor" content="#ff6767" />
+    <meta name="theme-color" content="#ff2a2a" />
 
+    <!-- Title -->
     <title>WarMAN</title>
-    
 </head>
 
 <body class="container-fluid hide" style="max-width: 950px">
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <loading-div></loading-div>
+    </div>
 
     <!-- Top Bar -->
     <div id="navT" class="sticky-top">
@@ -63,12 +72,13 @@
     </div>
 
     <!-- Script Dump -->
-    <script src="vue/navBar.js"></script>
+    <script src="vue/template.js"></script>
     <script src="vue/filter.js"></script>
     <script src="db/dbMenu.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="script/loading.js"></script>
     <script src="script/darkmode.js"></script>
-    <script> isdarkMode() </script>
+    <script> isdarkMode()</script>
 </body>
 
 </html>
