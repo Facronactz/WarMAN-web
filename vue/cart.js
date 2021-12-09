@@ -61,6 +61,10 @@ var vue = new Vue({
                 this.Cart[id] = 0;
                 this.compPrice[id];
             }
+        },
+
+        updateValue: function(id, value) {
+            this.Cart[id] += value
         }
         // Price: function(Amount){
         //     HarTot = this.Menu_Price*Amount;

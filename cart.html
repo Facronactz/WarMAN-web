@@ -48,13 +48,16 @@
     <div id="main">
         <div v-for="(cart, id) in Cart">
             <div v-if="Cart[id] > 0" class="row justify-content-between">
-                <div class="col-4 my-auto">
+                <div class="col-3 my-auto">
                     {{Show(Menus, id)}}
                     {{Menu_Name[id]}}
                 </div>
-                <div class="col-3">
-                    <input class="form-control text-center" type="number" :id="id" v-model.number="Cart[id]"
-                        @change="changeValue(id)">
+                <div class="col-4">
+                    <div class="row">
+                        <button class="btn btn-primary col-auto" type="button" @click="updateValue(id, -1)">-</button>
+                        <input class="form-control text-center col-auto" type="number" :id="id" v-model.number="Cart[id]" @change="changeValue(id)" style="max-width:15vw">
+                        <button class="btn btn-primary col-auto" type="button" @click="updateValue(id, 1)">+</button>
+                    </div>
                 </div>
                 <div class="col-3 my-auto far-row">
                     {{ compPrice[id] | toCurrency }}
