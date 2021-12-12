@@ -18,7 +18,7 @@ function toogleDark() {
   var c = document.getElementsByClassName("card");
 
   for (let index = 0; index < c.length; index++) {
-    ["bg-dark", "text-white", "border-light", "border-dark"].map((v) =>
+    ["bg-dark" , "border-light", "border-dark"].map((v) =>
       c[index].classList.toggle(v)
     );
   }
