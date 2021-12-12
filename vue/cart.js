@@ -160,7 +160,7 @@ var vue = new Vue({
 
     watch: {
         Cart: function(val) {
-            console.log("Cart");
+            // console.log("Cart");
         }
     }
 
