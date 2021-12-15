@@ -43,3 +43,26 @@ function toogleDark() {
     
   }
 }
+
+function darkORlight() {
+  let elem = document.getElementsByClassName("card");
+  for (let index = 0; index < elem.length; index++) {
+      if (elem[index].classList.contains("border-dark") && localStorage.dark){
+          elem[index].classList.remove("border-dark");
+          elem[index].classList.add("border-light");
+      }
+      else if (elem[index].classList.contains("border-light") && !localStorage.dark){
+          elem[index].classList.remove("border-light");
+          elem[index].classList.add("border-dark");
+      }
+      
+  }
+  // if(document.getElementsByClassName("border-light")!==null)
+  // {
+  //     for (let index = 0; index < elem.length; index++) {
+  //         ["bg-dark" , "border-light", "border-dark"].map((v) =>
+  //         elem[index].classList.add(v)
+  //         );
+  //     }
+  // }
+}
