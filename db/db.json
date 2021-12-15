@@ -5,7 +5,33 @@
         "Jam": "7 am - 9 pm, Sen-Jum",
         "Loc": "Kediri",
         "Desc": "Bagi kaum mileial ber-plat AG dan sekitarnya. yuk cobain Kediri Cafe, tenpat ngumpul dan seru-seruan bareng temanmaupun keluarga.",
-        "img": "https://cache.marriott.com/marriottassets/marriott/MOWLC/mowlc-beluga-restaurant-6102-hor-clsc.jpg"
+        "img": "https://cache.marriott.com/marriottassets/marriott/MOWLC/mowlc-beluga-restaurant-6102-hor-clsc.jpg",
+        "Menu": [
+            {
+                "id": "1",
+                "Name": "Rujak",
+                "Price": "8000",
+                "Desc": "Rujak adalah hidangan salad buah dan sayuran tradisional Indonesia, umumnya ditemukan di Indonesia, Malaysia, dan Singapura.",
+                "Restaurant": "1",
+                "img": "https: //cdn.tasteatlas.com/images/dishrestaurants/0b5a4f49383547a884bae583a5f5e4c2.jpg"
+            },
+            {
+                "id": "2",
+                "Name": "Pecel",
+                "Price": "10000",
+                "Desc": "Pecel atau pecal merupakan makanan berasal dari pulau Jawa, makanan ini biasanya dihidangkan dengan bumbu sambal kacang sebagai bahan utamanya dan dicampur dengan aneka jenis sayuran.",
+                "Restaurant": "1",
+                "img": "https://3.bp.blogspot.com/-l9XIcybK9Rc/WKphvod0WRI/AAAAAAAAEDo/HhVl_WmaSQQIAxnsvv3LOzPG-5jEgw1mQCLcB/s1600/pecel.jpg"
+            },
+            {
+                "id": "3",
+                "Name": "Pecel Lele",
+                "Price": "10000",
+                "Desc": "Pecel lele atau pecek lele di Indonesia adalah nama sebuah makanan khas Jawa yang terdiri dari ikan lele dan sambal tomat.",
+                "Restaurant": "1",
+                "img": "https://th.bing.com/th/id/OIP.LlMdyNgBDMnr_DWMtuv50QHaE8?w=261&h=180&c=7&r=0&o=5&pid=1.7"
+            }
+        ]
     },
     {
         "id": 2,
