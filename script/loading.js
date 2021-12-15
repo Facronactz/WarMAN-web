@@ -8,6 +8,6 @@ if (dark) {
   loading.style.backgroundColor = "black";
 }
 window.addEventListener("load", function () {
-  setTimeout(loading.remove(), 1500);
+  setTimeout(function () {loading.remove();}, 0);
   // loading.remove();
 });
