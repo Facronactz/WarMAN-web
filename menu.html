@@ -47,7 +47,7 @@
     <!-- Main -->
     <div id="app" class="pb-5 pt-1">
         <div class="form-floating mb-3">
-            <input v-model="Search" type="text" class="form-control" id="floatingInput" placeholder="Search">
+            <input v-model="Search" type="text" class="form-control" id="floatingInput" placeholder="Search" onkeyup="darkORlight()">
             <label for="floatingInput">Search</label>
         </div>
         <div v-for="Menu in Menus">
@@ -78,7 +78,7 @@
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/loading.js"></script>
     <script src="script/darkmode.js"></script>
-    <script> isdarkMode()</script>
+    <script> isdarkMode(); darkORlight();</script>
 </body>
 
 </html>
