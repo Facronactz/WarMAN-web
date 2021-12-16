@@ -16,7 +16,7 @@ var Cart = firebase.database().ref();
 Cart.on('value', (snapshot) => {
   const data = snapshot.val();
   for (index in data) {
-    vue.Menus.push(data[index].Menu);
+    vue.Menus.push(data[index].Menu.child());
   }
 });
 
