@@ -15,16 +15,16 @@ var database = firebase.database();
 var RestaurantDB = firebase.database().ref();
 RestaurantDB.on('value', (snapshot) => {
   const data = snapshot.val();
-  // console.log(data);
   vue.DB = data;
+  if(vue.DB.length == 0) {
+    fetch("db/db.json")
+    .then(response => {
+      return response.json();
+    })
+    .then(data => vue.DB = data);
+  }
 });
 
-// var json;
-// fetch("db/db.json")
-// .then(response => {
-//    return response.json();
-// })
-// .then(data => json = data);
 
 var vue = new Vue({
   el: "#main",

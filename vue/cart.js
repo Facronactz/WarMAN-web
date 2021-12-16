@@ -1,10 +1,32 @@
+var config = {
+  apiKey: "AIzaSyDMgCNjuKv087Cxv7AfJExWiAvhgHeHtdg",
+  authDomain: "warman-f2321.firebaseapp.com",
+  databaseURL:"https://warman-f2321-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "warman-f2321",
+  storageBucket: "warman-f2321.appspot.com",
+  messagingSenderId: "236549924414",
+  appId: "1:236549924414:web:6a90959b2c1dabf66b936f",
+  measurementId: "G-83W5C2DH7C",
+};
+
+firebase.initializeApp(config);
+var database = firebase.database();
+
+var Cart = firebase.database().ref();
+Cart.on('value', (snapshot) => {
+  const data = snapshot.val();
+  for (index in data) {
+    vue.Menus.push(data[index].Menu);
+  }
+});
+
 var vue = new Vue({
     el: '#main',
     data: {
         Cart: {
             
         },
-        Menus: MenuDB,
+        Menus: [],
         Menu_Name: {
 
         },

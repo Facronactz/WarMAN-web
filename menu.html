@@ -72,13 +72,15 @@
     </div>
 
     <!-- Script Dump -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="vue/template.js"></script>
     <script src="vue/filter.js"></script>
     <script src="db/dbMenu.js"></script>
     <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="script/loading.js"></script>
     <script src="script/darkmode.js"></script>
-    <script> isdarkMode(); darkORlight();</script>
+    <script> isdarkMode(); window.addEventListener("load", function () {setTimeout(darkORlight, 2000);});</script>
 </body>
 
 </html>
