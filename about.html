@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/194b575a78.js" crossorigin="anonymous"></script>
+    <!-- Vue -->
+    <script src="vue/vue.js"></script>
+    <!-- Additional CSS -->
+    <link rel="stylesheet" href="script/additional.css" />
+    <link rel="stylesheet" href="script/darkmode.css" />
+    <link rel="stylesheet" href="script/loading.css">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d55b5b" />
+    <meta name="apple-mobile-web-app-title" content="WarMAN" />
+    <meta name="application-name" content="WarMAN" />
+    <meta name="msapplication-TileColor" content="#ff6767" />
+    <meta name="theme-color" content="#ff2a2a" />
+
+    <!-- Title -->
+    <title>WarMAN</title>
+</head>
+
+<body class="container-fluid" style="max-width: 950px">
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <loading-div></loading-div>
+    </div>
+
+    <!-- Top Bar -->
+    <div id="navT" class="sticky-top">
+        <nav-back></nav-back>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+        <div class="d-flex justify-content-center align-items-center align-content-center w-100 flex-column" style="height: calc(90vh - 100px)">
+            <!-- <img src="media/about.png" alt="" srcset="" class="mx-auto img-fluid mb-4 d-block d-md-none" style="max-width: 30vw"> -->
+            <div class="p-2 mb-4 rounded-3 mx-2" style="background-color: #969696b2; max-width: 1000px;">
+                <div class="container-fluid py-3">
+                    <h1 class="display-5 fw-bold text-center">Tentang</h1>
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-3" style="width: fit-content;">
+                            <img src="media/about.png" alt="" srcset=""class="mx-auto img-fluid"style="max-width: 30vw">
+                        </div>
+                        
+                        <dl class="row my-0">
+                            <dt class="col-4">Nama</dt>
+                            <dd class="col-8 my-0">: Farro Axza Febsinatra S.</dd>
+                            <dt class="col-4">Email</dt>
+                            <dd class="col-8 my-0">: farroaxza@gmail.com</dd>
+                            <dt class="col-4">Universitas</dt>
+                            <dd class="col-8 my-0">: Universitas Negeri Surabay</dd>
+                        </dl>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div id="navB" class="mx-auto clearfix fixed-bottom" style="max-width: 950px">
+        <nav-bottom3></nav-bottom3>
+    </div>
+
+    <!-- Script Dump -->
+
+    <!-- <script>
+         function saveTotal() {
+            const rows = document.getElementsByClassName("far-row");
+            let totalCart = 0;
+    
+            for(let i = 0; i < rows.length; i++) {
+                totalCart += parseInt(rows[i].innerHTML);
+            }
+    
+            localStorage.Total = totalCart;
+        }
+        
+        function updateCart(value, id){
+            var crot = localStorage.Cart;
+            var parseCrot = JSON.parse(crot);
+            if(value == 0) {
+                delete parseCrot[id];
+                localStorage.Cart = JSON.stringify(parseCrot);
+                location.reload()
+            }
+            else
+            {
+                parseCrot[id] = parseInt(value);
+            // console.log(parseCrot);
+                localStorage.Cart = JSON.stringify(parseCrot);
+            }
+            // location.reload();
+
+            saveTotal();
+        };
+        // StoreData: function(){
+        //     this.Total += parseInt(this.Menu_Price);
+        //     console.log(parseInt(this.Menu_Price));
+        //     localStorage.Total = this.Total;
+        // },
+    </script> -->
+
+    <script src="vue/filter.js"></script>
+    <!-- <script src="db/dbMenu.js"></script> -->
+    <!-- <script src="vue/cart.js"></script> -->
+    <script src="vue/template.js"></script>
+    <script src="bootstrap\js\bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="script/loading.js"></script>
+    <script src="script/darkmode.js"></script>
+    <script>isdarkMode();</script>
+</body>
+
+</html>

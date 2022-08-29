@@ -1,9 +1,9 @@
 var vue = new Vue({
     el: '#main',
     data: {
-        Cart: {
-            
-        },
+        Cart: [
+
+        ],
         Menus: MenuDB,
         Menu_Name: {
 
@@ -17,6 +17,7 @@ var vue = new Vue({
         },
         Total_Total: 0,
         // totalTotal: 0
+        isEmpty: false,
     },
     created: function(){
         this.fetchCart();
@@ -33,6 +34,12 @@ var vue = new Vue({
         fetchCart: function(){
             var parseCrot = JSON.parse(localStorage.Cart)
             this.Cart = parseCrot;
+            // if (typeof this.parseCrot === 'undefined') {
+            //     this.isEmpty = true;
+            // }
+            if (localStorage.Cart == "{}"){
+                this.isEmpty = true;
+            }
             localStorage.removeItem('Total')
         },
         Show: function(Menus, Cart){

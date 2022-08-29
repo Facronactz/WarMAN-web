@@ -39,6 +39,11 @@
         <loading-div></loading-div>
     </div>
 
+    <!-- Icon Preload -->
+    <div id="preload">
+        <icon-preload></icon-preload>
+    </div>
+
     <!-- Top Bar -->
     <div id="navT" class="sticky-top">
         <nav-back></nav-back>
@@ -46,34 +51,48 @@
 
     <!-- Main -->
     <div id="main">
-        <div v-for="(cart, id) in Cart">
-            <div v-if="Cart[id] > 0" class="row justify-content-between">
-                <div class="col-3 my-auto">
-                    {{Show(Menus, id)}}
-                    {{Menu_Name[id]}}
-                </div>
-                <div class="col-4">
-                    <div class="row input-group">
-                        <button class="btn btn-primary col-auto" type="button" @click="updateValue(id, -1)">-</button>
-                        <input class="form-control text-center col-auto" type="number" :id="id" v-model.number="Cart[id]" @change="changeValue(id)" style="max-width:15vw">
-                        <button class="btn btn-primary col-auto" type="button" @click="updateValue(id, 1)">+</button>
+        <div v-if="isEmpty">
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-primary d-flex align-items-center" role="alert">
+                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+                        <div>
+                          Cart is empty
+                        </div>
                     </div>
                 </div>
-                <div class="col-3 my-auto far-row">
-                    {{ compPrice[id] | toCurrency }}
-                </div>
-                <a class="col-auto btn btn-primary me-2" :id="id" @click="remove(id)">x</a>
             </div>
         </div>
-        <hr>
-        <div>
-            <div class="row justify-content-between">
-                <div class="col-4 "></div>
-                <div class="col-3"></div>
-                <div class="col-3 my-auto far-row">
-                    {{totalTotal|toCurrency}}
+        <div v-else>
+            <div v-for="(cart, id) in Cart">
+                <div v-if="Cart[id] > 0" class="row justify-content-between">
+                    <div class="col-3 my-auto">
+                        {{Show(Menus, id)}}
+                        {{Menu_Name[id]}}
+                    </div>
+                    <div class="col-4">
+                        <div class="row input-group">
+                            <button class="btn btn-primary col-auto" type="button" @click="updateValue(id, -1)">-</button>
+                            <input class="form-control text-center col-auto" type="number" :id="id" v-model.number="Cart[id]" @change="changeValue(id)" style="max-width:15vw">
+                            <button class="btn btn-primary col-auto" type="button" @click="updateValue(id, 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="col-3 my-auto far-row">
+                        {{ compPrice[id] | toCurrency }}
+                    </div>
+                    <a class="col-auto btn btn-primary me-2" :id="id" @click="remove(id)">x</a>
                 </div>
-                <div class="col-auto btn btn-primary me-2 invisible">x</div>
+            </div>
+            <hr >
+            <div>
+                <div class="row justify-content-between">
+                    <div class="col-4 "></div>
+                    <div class="col-3"></div>
+                    <div class="col-3 my-auto far-row">
+                        {{totalTotal|toCurrency}}
+                    </div>
+                    <div class="col-auto btn btn-primary me-2 invisible">x</div>
+                </div>
             </div>
         </div>
     </div>
